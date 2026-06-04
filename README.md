@@ -39,12 +39,13 @@ The first prototype should support one narrow workflow:
 - `docs/hackathon-requirements.md` - requirements collected from Luma and Discord.
 - `docs/product-brief.md` - product positioning and MVP boundaries.
 - `docs/architecture.md` - initial architecture sketch.
+- `docs/akto-security-architecture.md` - Akto and TrueFoundry guardrail integration plan.
 - `docs/demo-failure-matrix.md` - resilience scenarios for the 3-minute demo.
 - `docs/policy-rubric.md` - initial approval policy model.
+- `config/truefoundry-guardrails.example.yaml` - example gateway guardrail policy selectors.
 - `examples/requests/` - sample software intake requests.
 - `examples/vendors/` - sample vendor evidence fixtures.
 
 ## Collaboration
 
 This repo starts framework-free on purpose. Add implementation code only after the team agrees on the agent runtime, tool interfaces, and demo path.
-

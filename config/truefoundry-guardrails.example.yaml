@@ -1,0 +1,87 @@
+name: autoapprove-guardrails
+type: gateway-guardrails-config
+# Replace every guardrail selector below with the real FQN copied from
+# TrueFoundry AI Gateway -> Guardrails -> Copy FQN.
+# Names such as `akto/argus-security` are placeholders for planning.
+rules:
+  - id: autoapprove-baseline-llm
+    when:
+      target:
+        operator: or
+        conditions:
+          metadata:
+            app: autoapprove-ai
+      subjects:
+        operator: and
+        conditions:
+          in:
+            - team:everyone
+    llm_input_guardrails:
+      - akto/argus-security
+      - truefoundry/prompt-injection
+      - truefoundry/pii-detection
+      - truefoundry/secrets-detection
+    llm_output_guardrails:
+      - akto/argus-security
+      - truefoundry/secrets-detection
+    mcp_tool_pre_invoke_guardrails: []
+    mcp_tool_post_invoke_guardrails: []
+
+  - id: autoapprove-evidence-tools
+    when:
+      target:
+        operator: or
+        conditions:
+          mcpServers:
+            values:
+              - autoapprove-evidence-tools
+            condition: in
+          metadata:
+            app: autoapprove-ai
+      subjects:
+        operator: and
+        conditions:
+          in:
+            - team:everyone
+    llm_input_guardrails: []
+    llm_output_guardrails: []
+    mcp_tool_pre_invoke_guardrails:
+      - akto/argus-security
+      - truefoundry/pii-detection
+      - truefoundry/secrets-detection
+    mcp_tool_post_invoke_guardrails:
+      - akto/argus-security
+      - truefoundry/prompt-injection
+      - truefoundry/pii-detection
+      - truefoundry/secrets-detection
+
+  - id: autoapprove-external-communication-tools
+    when:
+      target:
+        operator: or
+        conditions:
+          mcpServers:
+            values:
+              - autoapprove-communication-tools
+            condition: in
+          mcpTools:
+            values:
+              - send_email
+              - create_ticket
+            condition: in
+          metadata:
+            app: autoapprove-ai
+      subjects:
+        operator: and
+        conditions:
+          in:
+            - team:everyone
+    llm_input_guardrails: []
+    llm_output_guardrails: []
+    mcp_tool_pre_invoke_guardrails:
+      - akto/argus-security
+      - truefoundry/pii-detection
+      - truefoundry/secrets-detection
+    mcp_tool_post_invoke_guardrails:
+      - akto/argus-security
+      - truefoundry/secrets-detection
