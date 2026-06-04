@@ -1,0 +1,12 @@
+{
+  "request_id": "req_notion_wiki_demo",
+  "vendor_name": "Notion",
+  "product_url": "https://www.notion.so",
+  "requesting_team": "Operations",
+  "intended_use": "Maintain an internal project wiki and meeting notes.",
+  "data_types": ["internal_docs"],
+  "handles_customer_data": false,
+  "handles_credentials": false,
+  "business_urgency": "low"
+}
+

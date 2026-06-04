@@ -1,0 +1,12 @@
+{
+  "request_id": "req_cursor_support_demo",
+  "vendor_name": "Cursor",
+  "product_url": "https://cursor.com",
+  "requesting_team": "Customer Support Engineering",
+  "intended_use": "Use AI coding assistance to debug support tooling and write internal scripts.",
+  "data_types": ["source_code", "support_ticket_metadata"],
+  "handles_customer_data": true,
+  "handles_credentials": false,
+  "business_urgency": "medium"
+}
+
