@@ -40,8 +40,11 @@ The first prototype should support one narrow workflow:
 - `docs/product-brief.md` - product positioning and MVP boundaries.
 - `docs/architecture.md` - initial architecture sketch.
 - `docs/akto-security-architecture.md` - Akto and TrueFoundry guardrail integration plan.
+- `docs/adr/0001-runtime-guardrails-and-deterministic-approval-gates.md` - security architecture decision record.
 - `docs/demo-failure-matrix.md` - resilience scenarios for the 3-minute demo.
 - `docs/policy-rubric.md` - initial approval policy model.
+- `docs/security-review-checklist.md` - PR checklist for secrets, tools, evidence, guardrails, and decisions.
+- `docs/superpowers/plans/2026-06-04-akto-truefoundry-integration.md` - task-by-task implementation plan.
 - `config/truefoundry-guardrails.example.yaml` - example gateway guardrail policy selectors.
 - `examples/requests/` - sample software intake requests.
 - `examples/vendors/` - sample vendor evidence fixtures.
